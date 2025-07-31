@@ -1,0 +1,22 @@
+{
+  "name": "playwright-ui-automation-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirraschi/playwright-ui-automation-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nirraschi/playwright-ui-automation-portfolio/issues"
+  },
+  "homepage": "https://github.com/nirraschi/playwright-ui-automation-portfolio#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1"
+  }
+}
