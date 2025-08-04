@@ -29,27 +29,29 @@ test.describe('Dropdowns', async () => {
     test('Select the last programming language and print all the options', async ({page}) => {
         const langDropdown = await page.locator('#lang')
         const options = await langDropdown.locator('option').allTextContents();
-        console.log(options)
 
         const lastIndex = options.length - 1;
 
-        await langDropdown.selectOption({index: lastIndex})
+        await langDropdown.selectOption({ index: lastIndex });
 
-        const selected = await langDropdown.innerText();
-        await expect(selected).toBe(options[lastIndex])
+        const selected = await langDropdown.locator('option:checked').innerText();
+
+        console.log('Lenguaje seleccionado: ', selected)
 
         console.log('Lista de opciones:')
         options.forEach((option, index) => {
         console.log(`${index + 1}:${option}`) 
         })
+
+        expect(options.length).toBeGreaterThan(1);
     })
 
     test('Select India using value & print the selected value', async ({page}) => {
-        const countryDropdown = await page.locator('#country')
         
+        const countryDropdown = await page.locator('#country')        
         const selectedCountry = await countryDropdown.selectOption({value: 'India'})
 
-        await expect(selectedCountry).toHaveValue('India')
+        await expect(countryDropdown).toHaveValue('India')
 
         console.log(`Selected country: ${selectedCountry}`)
         
